@@ -8,7 +8,7 @@ export default function ExpansionSection() {
     <section className="py-24 lg:py-32 relative overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8" ref={ref}>
         <div
-          className={`relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary via-primary to-accent/80 p-12 lg:p-20 text-center transition-all duration-700 ${
+          className={`relative rounded-3xl overflow-hidden bg-gradient-to-br from-primary via-primary to-accent/50 p-12 lg:p-20 text-center transition-all duration-700 ${
             isVisible ? "opacity-100 scale-100" : "opacity-0 scale-95"
           }`}
         >
