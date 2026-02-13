@@ -9,17 +9,33 @@ const stats = [
 ];
 
 const highlights = [
-  { icon: Target, title: "Structured Tasks", desc: "Organized weekly assignments to reinforce learning" },
-  { icon: BookCheck, title: "Weekly Quizzes", desc: "Regular assessments to track your progress" },
-  { icon: MessageSquare, title: "Continuous Feedback", desc: "Personalized guidance on every step" },
-  { icon: TrendingUp, title: "Performance Tracking", desc: "Monitor your growth with data-driven insights" },
+  {
+    icon: Target,
+    title: "Structured Tasks",
+    desc: "Organized weekly assignments to reinforce learning",
+  },
+  {
+    icon: BookCheck,
+    title: "Weekly Quizzes",
+    desc: "Regular assessments to track your progress",
+  },
+  {
+    icon: MessageSquare,
+    title: "Continuous Feedback",
+    desc: "Personalized guidance on every step",
+  },
+  {
+    icon: TrendingUp,
+    title: "Performance Tracking",
+    desc: "Monitor your growth with data-driven insights",
+  },
 ];
 
 export default function AboutSection() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="about" className="py-24 lg:py-32 relative">
+    <section id="about" className="py-24 lg:py-32 relative ">
       <div className="container mx-auto px-4 lg:px-8" ref={ref}>
         {/* Stats */}
         <div
@@ -44,24 +60,31 @@ export default function AboutSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div
             className={`transition-all duration-700 delay-100 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
             }`}
           >
             <h2 className="font-heading text-3xl lg:text-5xl font-bold mb-6">
-              Built on <span className="text-gradient">Real Understanding</span>,
-              Not Memorization
+              Built on <span className="text-gradient">Real Understanding</span>
+              , Not Memorization
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              Tired of last-minute cramming that leads nowhere? We've spent 4+ years perfecting a system that makes learning stick — so you walk into exams with confidence, not anxiety.
+              Tired of last-minute cramming that leads nowhere? We've spent 4+
+              years perfecting a system that makes learning stick — so you walk
+              into exams with confidence, not anxiety.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Our students don't just pass — they understand. And that's why we're expanding from EELU to more universities across the region.
+              Our students don't just pass — they understand. And that's why
+              we're expanding from EELU to more universities across the region.
             </p>
           </div>
 
           <div
             className={`grid grid-cols-1 sm:grid-cols-2 gap-4 transition-all duration-700 delay-200 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-8"
             }`}
           >
             {highlights.map((h) => (
@@ -72,7 +95,9 @@ export default function AboutSection() {
                 <div className="w-12 h-12 rounded-xl gradient-accent flex items-center justify-center mb-4 shadow-accent group-hover:scale-110 transition-transform">
                   <h.icon className="w-6 h-6 text-accent-foreground" />
                 </div>
-                <h3 className="font-heading font-semibold text-foreground mb-2">{h.title}</h3>
+                <h3 className="font-heading font-semibold text-foreground mb-2">
+                  {h.title}
+                </h3>
                 <p className="text-sm text-muted-foreground">{h.desc}</p>
               </div>
             ))}

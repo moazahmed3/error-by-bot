@@ -68,7 +68,11 @@ export default function ContactSection() {
                 <div>
                   <div className="text-sm text-muted-foreground">Email</div>
                   <div className="font-heading font-semibold text-foreground">
-                    <a href="mailto:errorbyb@gmail.com" target="_blank">
+                    <a
+                      href="mailto:errorbyb@gmail.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       errorbyb@gmail.com
                     </a>
                   </div>

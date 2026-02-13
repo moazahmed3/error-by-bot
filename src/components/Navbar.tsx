@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
-import { Menu, X, Sun, Moon, Terminal } from "lucide-react";
+import { Menu, X, Sun, Moon, Terminal, CodeXml } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const navLinks = [
@@ -18,7 +18,9 @@ export default function Navbar() {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  useEffect(() => { setMounted(true); }, []);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -39,7 +41,7 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
             <div className="w-9 h-9 rounded-lg gradient-accent flex items-center justify-center shadow-accent">
-              <Terminal className="w-5 h-5 text-accent-foreground" />
+              <CodeXml className="w-5 h-5 text-accent-foreground" />
             </div>
             <span className="font-heading text-xl font-bold text-foreground">
               Error<span className="text-accent"> by Bot</span>
@@ -68,10 +70,18 @@ export default function Navbar() {
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 className="rounded-full"
               >
-                {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+                {theme === "dark" ? (
+                  <Sun className="h-5 w-5" />
+                ) : (
+                  <Moon className="h-5 w-5" />
+                )}
               </Button>
             )}
-            <a href="#courses" className="hidden lg:block">
+            <a
+              href="https://forms.gle/aCM555Fa9PN6pv41A"
+              target="_blank"
+              className="hidden lg:block"
+            >
               <Button className="gradient-accent text-accent-foreground shadow-accent hover:opacity-90 transition-opacity border-0">
                 Join Now
               </Button>
@@ -82,7 +92,11 @@ export default function Navbar() {
               className="lg:hidden"
               onClick={() => setMobileOpen(!mobileOpen)}
             >
-              {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {mobileOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </Button>
           </div>
         </div>
@@ -102,7 +116,11 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <a href="#courses" onClick={() => setMobileOpen(false)}>
+            <a
+              href="https://forms.gle/aCM555Fa9PN6pv41A"
+              target="_blank"
+              onClick={() => setMobileOpen(false)}
+            >
               <Button className="w-full mt-2 gradient-accent text-accent-foreground border-0">
                 Join Now
               </Button>

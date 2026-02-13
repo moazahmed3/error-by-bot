@@ -75,11 +75,11 @@ export default function SystemSection() {
               </div>
 
               {/* Arrow connector (desktop) */}
-              {i < steps.length - 1 && (
-                <div className="hidden lg:flex absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
+              {/* {i < steps.length - 1 && (
+                <div className="hidden lg:flex absolute top-1/2 -right-6 transform -translate-y-1/2 z-10">
                   <ArrowRight className="w-6 h-6 text-accent/40" />
                 </div>
-              )}
+              )} */}
             </div>
           ))}
         </div>
